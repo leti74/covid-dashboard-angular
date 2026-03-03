@@ -32,7 +32,7 @@ I dati vengono recuperati tramite API pubbliche dedicate al monitoraggio del COV
 
 Per eseguire il progetto localmente, segui questi passi:
 
-`git clone https://github.com/leti74/progetto-angular.git`
+`git clone https://github.com/leti74/covid-dashboard-angular.git`
 `cd progetto-angular`
 `npm install`
 `ng serve`
@@ -59,15 +59,15 @@ Per generare nuovi componenti / moduli / servizi (scaffolding Angular CLI):
    firebase init
 
 - Selezionare Hosting: Set up deployments for static web apps
-- Impostare la cartella pubblica su `dist/progetto-angular`
+- Impostare la cartella pubblica su `dist/progetto-covid19`
 - Configurare come Single Page App (rewrite tutte le URL a `index.html`)
 - Non configurare GitHub Action (opzionale)
 
 2. Effettuare il deploy:
    firebase deploy --only hosting
 
-Dopo il deploy, il link Firebase mostrerà l’app Angular. ⚠️ Nota: le API FruityVice non funzionano online senza server intermedio o funzioni Blaze.
+Dopo il deploy, il link Firebase mostrerà l’app Angular.
 
 ## link Firebase
 
-https://progetto-angular-a758e.web.app
+https://progetto-covid19-2026.web.app
