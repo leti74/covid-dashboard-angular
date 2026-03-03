@@ -1,0 +1,67 @@
+@if (loading) {
+<div class="text-center py-20 text-gray-500 text-lg font-medium">
+  Loading data...
+</div>
+}
+
+@if (!loading) {
+
+<!-- Dashboard Totali USA -->
+<section class="mt-10 mb-16">
+  <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">COVID-19 USA </h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <app-stat-card title="Total Cases" [value]="usaData?.positive"></app-stat-card>
+    <app-stat-card title="Deaths" [value]="usaData?.death"></app-stat-card>
+    <app-stat-card title="Hospitalized" [value]="usaData?.hospitalized || 'N/A'"></app-stat-card>
+  </div>
+</section>
+
+<!-- Top 5 Stati -->
+<section class="mt-20 mb-16 ">
+  <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b border-gray-300 pb-2 mb-8">
+    Top 5 States by Cases
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <app-stat-card *ngFor="let state of top5States" [title]="state.state" [value]="state.positive"></app-stat-card>
+  </div>
+</section>
+
+
+<!-- Lista Stati + Ricerca -->
+<section class="mt-20 mb-24">
+  <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-300 pb-2 mb-6">
+    US States
+  </h2>
+
+  <!-- Input Ricerca -->
+  <div class="mb-6">
+    <input id="stateSearchInput" type="text" placeholder="Search for a state..." [(ngModel)]="stateSearch"
+      (input)="filterStates()"
+      class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition" />
+  </div>
+
+  <!-- Select ordinamento + Direzione -->
+  <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+    <label class="font-medium text-gray-700">Sort by:</label>
+
+    <select [(ngModel)]="sortField" (change)="sortStates()"
+      class="border p-2 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+      <option value="state">Alphabetical</option>
+      <option value="positive">Cases</option>
+      <option value="death">Deaths</option>
+      <option value="hospitalized">Hospitalized</option>
+    </select>
+
+    <button (click)="sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'; toggleSortDirection()"
+      class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+      {{ sortDirection === 'asc' ? 'Asc' : 'Desc' }}
+    </button>
+  </div>
+
+  <!-- Lista Stati -->
+  <div>
+    <app-state-list [states]="filteredStates"></app-state-list>
+  </div>
+</section>}

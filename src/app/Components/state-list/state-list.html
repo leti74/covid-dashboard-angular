@@ -1,0 +1,8 @@
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    @for (state of states(); track $index) {
+    <div class="bg-white p-4 rounded-lg shadow cursor-pointer hover:shadow-lg transition"
+        [routerLink]="['/state', state.state.toLowerCase()]">
+        <h3 class="font-semibold mb-1">{{ state.state }}</h3>
+        <p class="text-sm text-gray-600">Cases: {{ state.positive | number }}</p>
+    </div>
+    }

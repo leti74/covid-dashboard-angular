@@ -1,0 +1,19 @@
+@if (loading) {
+<div class="text-center py-10">Loading state data...</div>
+}
+
+@if(!loading){
+<div class="w-full max-w-4xl mx-auto px-2 md:px-0 mt-36">
+
+    <button routerLink="/dashboard" class="mb-4 text-blue-600 hover:underline">← Back to Dashboard</button>
+
+    <div class="bg-white p-6 rounded-xl shadow">
+        <h1 class="text-2xl font-bold mb-4">{{ stateData?.state }}</h1>
+        <p><b>Cases:</b> {{ stateData?.positive | number }}</p>
+        <p><b>Deaths:</b> {{ stateData?.death | number }}</p>
+        <p><b>Hospitalized:</b> {{ stateData?.hospitalized || 'N/A' }}</p>
+        <p class="text-sm text-gray-500 mt-4">Last update: {{ stateData?.lastUpdateEt | date:'short' }}</p>
+    </div>
+
+</div>
+}
