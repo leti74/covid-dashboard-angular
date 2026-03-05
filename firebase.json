@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/progetto-covid19",
+    "public": "dist/progetto-covid19/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
