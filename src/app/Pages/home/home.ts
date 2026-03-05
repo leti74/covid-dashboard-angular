@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
+import { ChartComponent } from '../../Components/chart/chart';
 
 @Component({
   selector: 'app-home',
-  imports: [StatCard, StateList, CommonModule, FormsModule, RouterModule, MatInputModule],
+  imports: [StatCard, StateList, CommonModule, FormsModule, RouterModule, MatInputModule, ChartComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

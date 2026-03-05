@@ -13,7 +13,7 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     <app-stat-card title="Total Cases" [value]="usaData?.positive"></app-stat-card>
     <app-stat-card title="Deaths" [value]="usaData?.death"></app-stat-card>
-    <app-stat-card title="Hospitalized" [value]="usaData?.hospitalized || 'N/A'"></app-stat-card>
+    <app-stat-card title="Hospitalized" [value]="usaData?.hospitalized"></app-stat-card>
   </div>
 </section>
 
@@ -23,9 +23,7 @@
     Top 5 States by Cases
   </h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-    <app-stat-card *ngFor="let state of top5States" [title]="state.state" [value]="state.positive"></app-stat-card>
-  </div>
+  <app-chart [top5States]="top5States"></app-chart>
 </section>
 
 
