@@ -46,7 +46,7 @@ GitHub
 
 Per build di produzione:
 
-`ng build --prod`
+`ng build`
 
 Per generare nuovi componenti / moduli / servizi (scaffolding Angular CLI):
 
