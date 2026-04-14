@@ -33,7 +33,7 @@ I dati vengono recuperati tramite API pubbliche dedicate al monitoraggio del COV
 Per eseguire il progetto localmente, segui questi passi:
 
 `git clone https://github.com/leti74/covid-dashboard-angular.git`
-`cd progetto-angular`
+`cd covid-dashboard-angular`
 `npm install`
 `ng serve`
 
